@@ -1,7 +1,6 @@
 let myLibrary = [];
 
 const bookContainer = document.querySelector('.books-container');
-const bookCard = bookContainer.querySelector('div');
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -27,13 +26,13 @@ function displayInfo(card, book) {
   const cardHeading = document.createElement('h1');
   const cardAuthor = document.createElement('h2');
   const cardPages = document.createElement('h3');
-  const cardRead = document.createElement('h4');
+  const cardRead = document.createElement('button');
 
-  cardHeading.textContent = `Title: ${book.title}`;
-  cardAuthor.textContent = `Author: ${book.author}`;
+  cardHeading.textContent = `"${book.title}"`;
+  cardAuthor.textContent = `by ${book.author}`;
   cardPages.textContent = `Pages: ${book.pages}`;
   (book.read) ? cardRead.textContent = 'Read' : cardRead.textContent = 'Not Read';
-  
+
   card.appendChild(cardHeading);
   card.appendChild(cardAuthor);
   card.appendChild(cardPages);
