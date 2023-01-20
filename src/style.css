@@ -13,4 +13,22 @@
   margin: auto;
   padding-top: 40px;
   text-align: center;
+  width: 250px;
+}
+
+.books-container > div > h1 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.books-container > div > h2 {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.books-container > div > h3 {
+  font-size: 1.25rem;
+  font-weight: 300;
 }
