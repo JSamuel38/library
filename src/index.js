@@ -1,6 +1,14 @@
 let myLibrary = [];
 
 const bookContainer = document.querySelector('.books-container');
+const addBook = document.querySelector('.add-button');
+const bookForm = document.createElement('form');
+const formTitle = document.createElement('input');
+const formAuthor = document.createElement('input');
+const formPages = document.createElement('input'); 
+const formReadLabel = document.createElement('label');
+const formRead = document.createElement('input');
+const formSubmit = document.createElement('button');
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -71,3 +79,29 @@ function displayInfo(card, book) {
   card.appendChild(cardRemove);
 }
 
+formTitle.setAttribute('type', 'text');
+formTitle.placeholder = 'Title';
+formAuthor.setAttribute('type', 'text');
+formAuthor.placeholder = 'Author';
+formPages.setAttribute('type', 'number');
+formPages.setAttribute('min', '1');
+formPages.placeholder = 'Pages';
+formReadLabel.textContent = 'Have you read it?';
+formRead.setAttribute('type', 'checkbox');
+formSubmit.setAttribute('type', 'submit');
+formSubmit.textContent = 'Submit';
+
+bookForm.appendChild(formTitle);
+bookForm.appendChild(formAuthor);
+bookForm.appendChild(formPages);
+bookForm.appendChild(formReadLabel);
+bookForm.appendChild(formRead);
+bookForm.appendChild(formSubmit);
+
+formSubmit.addEventListener('click', () => {
+  document.body.removeChild(bookForm);
+});
+
+addBook.addEventListener('click', () => {
+  document.body.appendChild(bookForm);
+});
