@@ -27,17 +27,40 @@ function displayInfo(card, book) {
   const cardAuthor = document.createElement('h2');
   const cardPages = document.createElement('h3');
   const cardRead = document.createElement('button');
-  const remove = document.createElement('button');
+  const cardRemove = document.createElement('button');
 
   cardHeading.textContent = `"${book.title}"`;
   cardAuthor.textContent = `by ${book.author}`;
   cardPages.textContent = `Pages: ${book.pages}`;
-  (book.read) ? cardRead.textContent = 'Read' : cardRead.textContent = 'Not Read';
-  remove.textContent = 'Remove';
+  cardRemove.textContent = 'Remove';
+
+  if (book.read) {
+    cardRead.textContent = 'Read';
+    cardRead.style.backgroundColor = 'rgb(119, 255, 119)';
+    
+  } else {
+    cardRead.textContent = 'Not Read';
+    cardRead.style.backgroundColor = 'rgb(255, 119, 119)';
+  }
+
+  cardRead.setAttribute('class', 'read-button');
+  cardRemove.setAttribute('class', 'remove-button');
+
+  cardRead.addEventListener('click', () => {
+    if (cardRead.innerText === 'Read') { 
+      cardRead.style.backgroundColor = 'rgb(255, 119, 119)';
+      cardRead.innerText = 'Not read';
+    } else {
+      cardRead.style.backgroundColor = 'rgb(119, 255, 119)';
+      cardRead.innerText = 'Read';
+    }
+  });
 
   card.appendChild(cardHeading);
   card.appendChild(cardAuthor);
   card.appendChild(cardPages);
   card.appendChild(cardRead);
-  card.appendChild(remove);
+  card.appendChild(cardRemove);
 }
+
+
