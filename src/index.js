@@ -99,6 +99,9 @@ bookForm.appendChild(formRead);
 bookForm.appendChild(formSubmit);
 
 formSubmit.addEventListener('click', () => {
+  const addedBook = new Book(formTitle.value, formAuthor.value, formPages.value, formRead.checked);
+  addBookToLibrary(addedBook);
+  displayBooks(myLibrary);
   document.body.removeChild(bookForm);
 });
 
