@@ -11,6 +11,8 @@
 
 header {
   background-color: var(--dark-blue);
+  box-shadow: #777 0px 5px 5px;
+  display: flex;
   padding: 8px;
   margin: -8px;
   width: 100%;
@@ -22,6 +24,31 @@ header > div {
 
 header > div > h1 {
   color: var(--white-color);
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 40px;
+}
+
+.add-button {
+  background-color: var(--light-blue);
+  border: none;
+  border-radius: 8px;
+  color: var(--dark-blue);
+  font-size: 1.125rem;
+  padding: 24px;
+  width: 128px;
+}
+
+.add-button:hover {
+  background-color: #c9cfdc;
+}
+
+.add-button:active {
+  background-color: #b2b8c4;
 }
 
 .books-container {
