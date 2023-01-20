@@ -56,11 +56,15 @@ function displayInfo(card, book) {
     }
   });
 
+  cardRemove.addEventListener('click', () => {
+    bookContainer.removeChild(card);
+    myLibrary.splice(myLibrary.indexOf(book), 1);
+  });
+
   card.appendChild(cardHeading);
   card.appendChild(cardAuthor);
   card.appendChild(cardPages);
   card.appendChild(cardRead);
   card.appendChild(cardRemove);
 }
-
 
