@@ -9,6 +9,21 @@
   font-family: 'Roboto', sans-serif;
 }
 
+header {
+  background-color: var(--dark-blue);
+  padding: 8px;
+  margin: -8px;
+  width: 100%;
+}
+
+header > div {
+  padding-left: 10vw;
+}
+
+header > div > h1 {
+  color: var(--white-color);
+}
+
 .books-container {
   display: grid;
   gap: 140px;
