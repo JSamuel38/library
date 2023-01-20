@@ -10,6 +10,9 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary(book) {
+  if (myLibrary.filter(e => e.title === book.title).length > 0) {
+    return 'This book is already in the library.';
+  }
   myLibrary.push(book);
 }
 
