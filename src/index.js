@@ -19,6 +19,7 @@ function addBookToLibrary(book) {
 }
 
 function displayBooks(library) {
+  bookContainer.replaceChildren();
   library.forEach((book) => {
     const card = document.createElement('div');
     card.innerText = book.info();
