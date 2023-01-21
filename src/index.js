@@ -1,6 +1,7 @@
 let myLibrary = [];
 
 const bookContainer = document.querySelector('.books-container');
+const header = document.querySelector('header');
 const addBook = document.querySelector('.add-button');
 const bookForm = document.createElement('form');
 const formTitle = document.createElement('input');
@@ -108,9 +109,17 @@ formSubmit.addEventListener('click', () => {
   addBookToLibrary(addedBook);
   displayBooks(myLibrary);
   document.body.removeChild(bookForm);
+  bookContainer.removeAttribute('style', 'filter: brightness(50%)');
+  header.removeAttribute('style', 'filter: brightness(50%)');
+  addBook.removeAttribute('style', 'filter: brightness(50%)');
+  document.body.style.backgroundColor = 'rgb(249,247,247)';
 });
 
 
 addBook.addEventListener('click', () => {
   document.body.appendChild(bookForm);
+  bookContainer.setAttribute('style', 'filter: brightness(50%)');
+  header.setAttribute('style', 'filter: brightness(50%)');
+  addBook.setAttribute('style', 'filter: brightness(50%)');
+  document.body.style.backgroundColor = 'rgb(200, 200, 200)';
 });
