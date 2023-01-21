@@ -81,11 +81,14 @@ function displayInfo(card, book) {
 
 formTitle.setAttribute('type', 'text');
 formTitle.placeholder = 'Title';
+formTitle.required = true;
 formAuthor.setAttribute('type', 'text');
 formAuthor.placeholder = 'Author';
+formAuthor.required = true;
 formPages.setAttribute('type', 'number');
 formPages.setAttribute('min', '1');
 formPages.placeholder = 'Pages';
+formPages.required = true;
 formReadLabel.textContent = 'Have you read it?';
 formRead.setAttribute('type', 'checkbox');
 formSubmit.setAttribute('type', 'submit');
@@ -99,11 +102,13 @@ bookForm.appendChild(formRead);
 bookForm.appendChild(formSubmit);
 
 formSubmit.addEventListener('click', () => {
+  if (formTitle.value === '' || formAuthor.value === '' || formPages.value === '') return;
   const addedBook = new Book(formTitle.value, formAuthor.value, formPages.value, formRead.checked);
   addBookToLibrary(addedBook);
   displayBooks(myLibrary);
   document.body.removeChild(bookForm);
 });
+
 
 addBook.addEventListener('click', () => {
   document.body.appendChild(bookForm);
